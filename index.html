@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gopika P | Backend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -114,12 +117,14 @@
       transition: transform 0.25s ease-out, opacity 0.25s ease-out;
     }
 
-    .cursor-dot.hover, .cursor-ring.hover {
+    .cursor-dot.hover,
+    .cursor-ring.hover {
       transform: scale(1.8);
       border-color: var(--accent-gold);
     }
 
-    .cursor-dot.click, .cursor-ring.click {
+    .cursor-dot.click,
+    .cursor-ring.click {
       transform: scale(0.8);
       opacity: 0.7;
     }
@@ -186,11 +191,13 @@
       transition: width 0.3s ease;
     }
 
-    .nav-links a:hover, .nav-links a.active {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--accent-gold);
     }
 
-    .nav-links a:hover::after, .nav-links a.active::after {
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
       width: 100%;
     }
 
@@ -319,13 +326,40 @@
     }
 
     @keyframes glitch {
-      0%, 100% { transform: translate(0); }
-      1% { transform: translate(-2px, 1px); text-shadow: 2px 0 var(--accent-gold); }
-      2% { transform: translate(2px, -1px); text-shadow: -2px 0 var(--accent-cyan); }
-      3% { transform: translate(0); text-shadow: none; }
-      98% { transform: translate(1px, -2px); text-shadow: -2px 0 var(--accent-gold); }
-      99% { transform: translate(-1px, 2px); text-shadow: 2px 0 var(--accent-cyan); }
-      100% { transform: translate(0); }
+
+      0%,
+      100% {
+        transform: translate(0);
+      }
+
+      1% {
+        transform: translate(-2px, 1px);
+        text-shadow: 2px 0 var(--accent-gold);
+      }
+
+      2% {
+        transform: translate(2px, -1px);
+        text-shadow: -2px 0 var(--accent-cyan);
+      }
+
+      3% {
+        transform: translate(0);
+        text-shadow: none;
+      }
+
+      98% {
+        transform: translate(1px, -2px);
+        text-shadow: -2px 0 var(--accent-gold);
+      }
+
+      99% {
+        transform: translate(-1px, 2px);
+        text-shadow: 2px 0 var(--accent-cyan);
+      }
+
+      100% {
+        transform: translate(0);
+      }
     }
 
     .hero-tagline {
@@ -343,7 +377,9 @@
     }
 
     @keyframes blink {
-      50% { border-color: transparent; }
+      50% {
+        border-color: transparent;
+      }
     }
 
     .hero-metrics {
@@ -482,9 +518,17 @@
       border-radius: 50%;
     }
 
-    .code-dot:nth-child(1) { background: #ff5f57; }
-    .code-dot:nth-child(2) { background: #febc2e; }
-    .code-dot:nth-child(3) { background: #28c840; }
+    .code-dot:nth-child(1) {
+      background: #ff5f57;
+    }
+
+    .code-dot:nth-child(2) {
+      background: #febc2e;
+    }
+
+    .code-dot:nth-child(3) {
+      background: #28c840;
+    }
 
     .code-title {
       font-family: 'JetBrains Mono', monospace;
@@ -515,14 +559,33 @@
       text-align: right;
     }
 
-    .code-content { flex: 1; }
+    .code-content {
+      flex: 1;
+    }
 
-    .code-keyword { color: #c586c0; }
-    .code-entity { color: #dcdcaa; }
-    .code-type { color: #569cd6; }
-    .code-string { color: #ce9178; }
-    .code-comment { color: var(--muted); }
-    .code-accent { color: var(--accent-gold); }
+    .code-keyword {
+      color: #c586c0;
+    }
+
+    .code-entity {
+      color: #dcdcaa;
+    }
+
+    .code-type {
+      color: #569cd6;
+    }
+
+    .code-string {
+      color: #ce9178;
+    }
+
+    .code-comment {
+      color: var(--muted);
+    }
+
+    .code-accent {
+      color: var(--accent-gold);
+    }
 
     /* About Section */
     .about-content {
@@ -555,8 +618,15 @@
     }
 
     @keyframes promptBlink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     .profile-bio {
@@ -576,6 +646,9 @@
     }
 
     .tech-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       padding: 8px 16px;
       background: var(--card);
       border: 1px solid var(--border);
@@ -583,6 +656,13 @@
       font-size: 11px;
       color: var(--muted);
       transition: all 0.3s ease;
+    }
+
+    .tech-tag img,
+    .tech-tag svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
     }
 
     .tech-tag:hover {
@@ -1055,20 +1135,23 @@
       left: 0;
       right: 0;
       height: 100%;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(255, 255, 255, 0.01) 2px,
-        rgba(255, 255, 255, 0.01) 4px
-      );
+      background: repeating-linear-gradient(0deg,
+          transparent,
+          transparent 2px,
+          rgba(255, 255, 255, 0.01) 2px,
+          rgba(255, 255, 255, 0.01) 4px);
       pointer-events: none;
       animation: scanline 8s linear infinite;
     }
 
     @keyframes scanline {
-      0% { background-position: 0 0; }
-      100% { background-position: 0 100%; }
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 0 100%;
+      }
     }
 
     .footer-content {
@@ -1098,7 +1181,10 @@
 
     /* Responsive */
     @media (max-width: 1024px) {
-      .hero-content, .about-content, .contact-grid {
+
+      .hero-content,
+      .about-content,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1193,7 +1279,10 @@
 
     /* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
@@ -1201,6 +1290,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -1227,9 +1317,14 @@
     </button>
     <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3C7 3 2 8 2 13C2 18 7 23 12 23C17 23 22 18 22 13C22 8 17 3 12 3Z" fill="currentColor" opacity="0.3"/>
-        <path d="M12 5C10.9 5 9.9 5.3 9 5.8L5.3 9.5C4.8 10 4.5 10.8 4.5 11.5C4.5 12.2 4.8 13 5.3 13.5L9 17.2C9.9 17.7 10.9 18 12 18C13.1 18 14.1 17.7 15 17.2L18.7 13.5C19.2 13 19.5 12.2 19.5 11.5C19.5 10.8 19.2 10 18.7 9.5L15 5.8C14.1 5.3 13.1 5 12 5Z" fill="currentColor"/>
-        <path d="M12 15C13.1 15 14.1 14.7 15 14.2L18.7 10.5C19.2 10 19.5 9.2 19.5 8.5C19.5 7.8 19.2 7 18.7 6.5L15 2.8C14.1 2.3 13.1 2 12 2C10.9 2 9.9 2.3 9 2.8L5.3 6.5C4.8 7 4.5 7.8 4.5 8.5C4.5 9.2 4.8 10 5.3 10.5L9 14.2C9.9 14.7 10.9 15 12 15Z" fill="currentColor"/>
+        <path d="M12 3C7 3 2 8 2 13C2 18 7 23 12 23C17 23 22 18 22 13C22 8 17 3 12 3Z" fill="currentColor"
+          opacity="0.3" />
+        <path
+          d="M12 5C10.9 5 9.9 5.3 9 5.8L5.3 9.5C4.8 10 4.5 10.8 4.5 11.5C4.5 12.2 4.8 13 5.3 13.5L9 17.2C9.9 17.7 10.9 18 12 18C13.1 18 14.1 17.7 15 17.2L18.7 13.5C19.2 13 19.5 12.2 19.5 11.5C19.5 10.8 19.2 10 18.7 9.5L15 5.8C14.1 5.3 13.1 5 12 5Z"
+          fill="currentColor" />
+        <path
+          d="M12 15C13.1 15 14.1 14.7 15 14.2L18.7 10.5C19.2 10 19.5 9.2 19.5 8.5C19.5 7.8 19.2 7 18.7 6.5L15 2.8C14.1 2.3 13.1 2 12 2C10.9 2 9.9 2.3 9 2.8L5.3 6.5C4.8 7 4.5 7.8 4.5 8.5C4.5 9.2 4.8 10 5.3 10.5L9 14.2C9.9 14.7 10.9 15 12 15Z"
+          fill="currentColor" />
       </svg>
     </button>
   </nav>
@@ -1276,16 +1371,27 @@
             <div class="code-title">developer.cs</div>
           </div>
           <div class="code-body">
-            <div class="code-line"><span class="code-num">1</span><span class="code-content"><span class="code-keyword">public class</span> <span class="code-entity">BackendDeveloper</span> {</span></div>
-            <div class="code-line"><span class="code-num">2</span><span class="code-content">  <span class="code-accent">string</span> name = <span class="code-string">"Gopika P"</span>;</span></div>
-            <div class="code-line"><span class="code-num">3</span><span class="code-content">  <span class="code-accent">string</span> role = <span class="code-string">"Backend Developer"</span>;</span></div>
-            <div class="code-line"><span class="code-num">4</span><span class="code-content">  <span class="code-accent">int</span> experience = <span class="code-type">1</span>;</span></div>
-            <div class="code-line"><span class="code-num">5</span><span class="code-content">  <span class="code-accent">string[]</span> skills = {</span></div>
-            <div class="code-line"><span class="code-num">6</span><span class="code-content">    <span class="code-string">"C#"</span>,</span></div>
-            <div class="code-line"><span class="code-num">7</span><span class="code-content">    <span class="code-string">"ASP.NET Core"</span>,</span></div>
-            <div class="code-line"><span class="code-num">8</span><span class="code-content">    <span class="code-string">"SQL"</span>,</span></div>
-            <div class="code-line"><span class="code-num">9</span><span class="code-content">    <span class="code-string">"AWS"</span></span></div>
-            <div class="code-line"><span class="code-num">10</span><span class="code-content">  };</span></div>
+            <div class="code-line"><span class="code-num">1</span><span class="code-content"><span
+                  class="code-keyword">public class</span> <span class="code-entity">BackendDeveloper</span> {</span>
+            </div>
+            <div class="code-line"><span class="code-num">2</span><span class="code-content"> <span
+                  class="code-accent">string</span> name = <span class="code-string">"Gopika P"</span>;</span></div>
+            <div class="code-line"><span class="code-num">3</span><span class="code-content"> <span
+                  class="code-accent">string</span> role = <span class="code-string">"Backend Developer"</span>;</span>
+            </div>
+            <div class="code-line"><span class="code-num">4</span><span class="code-content"> <span
+                  class="code-accent">int</span> experience = <span class="code-type">1</span>;</span></div>
+            <div class="code-line"><span class="code-num">5</span><span class="code-content"> <span
+                  class="code-accent">string[]</span> skills = {</span></div>
+            <div class="code-line"><span class="code-num">6</span><span class="code-content"> <span
+                  class="code-string">"C#"</span>,</span></div>
+            <div class="code-line"><span class="code-num">7</span><span class="code-content"> <span
+                  class="code-string">"ASP.NET Core"</span>,</span></div>
+            <div class="code-line"><span class="code-num">8</span><span class="code-content"> <span
+                  class="code-string">"SQL"</span>,</span></div>
+            <div class="code-line"><span class="code-num">9</span><span class="code-content"> <span
+                  class="code-string">"AWS"</span></span></div>
+            <div class="code-line"><span class="code-num">10</span><span class="code-content"> };</span></div>
             <div class="code-line"><span class="code-num">11</span><span class="code-content">}</span></div>
           </div>
         </div>
@@ -1298,45 +1404,49 @@
     <h2 class="section-title">ABOUT</h2>
     <div class="about-content">
       <div class="ascii-profile" id="asciiProfile">
-<span>= SYS PROFILE v1.0 =
+        <span>= SYS PROFILE v1.0 =
 
-+------------------------+
-|  GOPIKA P              |
-|  Backend Developer     |
-|  C# / ASP.NET Core     |
-+------------------------+
-| EXP:    1+ YRS         |
-| ROLE:   SOFTWARE DEV   |
-| STATUS: ACTIVE         |
-+------------------------+
-| LOCATION: COIMBATORE   |
-| TAMIL NADU             |
-+------------------------+
+          +------------------------+
+          | GOPIKA P |
+          | Backend Developer |
+          | C# / ASP.NET Core |
+          +------------------------+
+          | EXP: 1+ YRS |
+          | ROLE: SOFTWARE DEV |
+          | STATUS: ACTIVE |
+          +------------------------+
+          | LOCATION: COIMBATORE |
+          | TAMIL NADU |
+          +------------------------+
 
-> SYSTEM INITIALIZED
-> LOADING ACHIEVEMENTS...</span>
+          > SYSTEM INITIALIZED
+          > LOADING ACHIEVEMENTS...</span>
       </div>
       <div class="profile-bio">
-        <p>Backend Developer with 1+ year of experience designing and delivering RESTful APIs using C# and ASP.NET Core. Proficient in layered architecture, SQL query optimization, and API documentation with Swagger. Hands-on exposure to Amazon Web Services (AWS) — EC2, S3, and Lambda — with strong problem-solving, team collaboration, and critical-thinking skills demonstrated through leadership roles in national-level competitions and student organizations.</p>
+        <p>Backend Developer with 1+ year of experience designing and delivering RESTful APIs using C# and ASP.NET Core.
+          Proficient in layered architecture, SQL query optimization, and API documentation with Swagger. Hands-on
+          exposure to Amazon Web Services (AWS) — EC2, S3, and Lambda — with strong problem-solving, team collaboration,
+          and critical-thinking skills demonstrated through leadership roles in national-level competitions and student
+          organizations.</p>
         <div class="tech-stack">
-          <span class="tech-tag"><i class="fas fa-code"></i> C#</span>
-          <span class="tech-tag"><i class="fas fa-coffee"></i> Java</span>
-          <span class="tech-tag">C</span>
-          <span class="tech-tag">ASP.NET Core</span>
-          <span class="tech-tag">.NET</span>
-          <span class="tech-tag">RESTful API Design</span>
-          <span class="tech-tag">Layered Architecture</span>
-          <span class="tech-tag">SQL</span>
-          <span class="tech-tag">AWS</span>
-          <span class="tech-tag">Visual Studio</span>
-          <span class="tech-tag">VS Code</span>
-          <span class="tech-tag">Swagger</span>
-          <span class="tech-tag">Git</span>
-          <span class="tech-tag">Claude AI</span>
-          <span class="tech-tag">Team Collaboration</span>
-          <span class="tech-tag">Problem Solving</span>
-          <span class="tech-tag">Critical Thinking</span>
-          <span class="tech-tag">Adaptability</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"> C#</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"> C</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET Core"> ASP.NET Core</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET"> .NET</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#2dd4bf" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">&lt;/&gt;</text></svg> RESTful API Design</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#6366f1" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">≡</text></svg> Layered Architecture</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL"> SQL</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS"> AWS</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio"> Visual Studio</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"> VS Code</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="Swagger"> Swagger</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"> Git</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#f97316" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">✦</text></svg> Claude AI</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#38bdf8" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">⬡</text></svg> Team Collaboration</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#fbbf24" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">💡</text></svg> Problem Solving</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#a78bfa" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">◈</text></svg> Critical Thinking</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#4ade80" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">↻</text></svg> Adaptability</span>
         </div>
         <div class="stats-grid">
           <div class="stat-box">
@@ -1367,24 +1477,24 @@
       <div class="skill-card">
         <h3><i class="fas fa-code"></i> LANGUAGES</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag"><i class="fas fa-code"></i> C#</span>
-          <span class="tech-tag"><i class="fas fa-coffee"></i> Java</span>
-          <span class="tech-tag">C</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"> C#</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"> C</span>
         </div>
       </div>
       <div class="skill-card">
         <h3><i class="fas fa-layer-group"></i> FRAMEWORKS &amp; ARCHITECTURE</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag">ASP.NET Core</span>
-          <span class="tech-tag">.NET</span>
-          <span class="tech-tag">RESTful API Design</span>
-          <span class="tech-tag">Layered Architecture</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET Core"> ASP.NET Core</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET"> .NET</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#2dd4bf" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">&lt;/&gt;</text></svg> RESTful API Design</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#6366f1" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">≡</text></svg> Layered Architecture</span>
         </div>
       </div>
       <div class="skill-card">
         <h3><i class="fas fa-database"></i> DATABASES</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag">SQL</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL"> SQL</span>
           <span class="tech-tag">Stored Procedures</span>
           <span class="tech-tag">Data Retrieval</span>
         </div>
@@ -1392,7 +1502,7 @@
       <div class="skill-card">
         <h3><i class="fas fa-cloud"></i> CLOUD</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag">AWS</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS"> AWS</span>
           <span class="tech-tag">EC2</span>
           <span class="tech-tag">S3</span>
           <span class="tech-tag">Lambda</span>
@@ -1401,20 +1511,20 @@
       <div class="skill-card">
         <h3>TOOLS</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag">Visual Studio</span>
-          <span class="tech-tag">VS Code</span>
-          <span class="tech-tag">Swagger</span>
-          <span class="tech-tag">Git</span>
-          <span class="tech-tag">Claude AI</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio"> Visual Studio</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"> VS Code</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="Swagger"> Swagger</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"> Git</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#f97316" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">✦</text></svg> Claude AI</span>
         </div>
       </div>
       <div class="skill-card">
         <h3>SOFT SKILLS</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag">Team Collaboration</span>
-          <span class="tech-tag">Problem Solving</span>
-          <span class="tech-tag">Critical Thinking</span>
-          <span class="tech-tag">Adaptability</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#38bdf8" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">⬡</text></svg> Team Collaboration</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#fbbf24" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">💡</text></svg> Problem Solving</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#a78bfa" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">🧠</text></svg> Critical Thinking</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#4ade80" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">↻</text></svg> Adaptability</span>
           <span class="tech-tag">Time Management</span>
         </div>
       </div>
@@ -1432,7 +1542,12 @@
         <h3 class="timeline-title">Software Developer (.NET Backend)</h3>
         <div class="timeline-company">AbaxysTechnologies Pvt Ltd, Coimbatore, India</div>
         <div class="timeline-desc">
-          Engineered 5+ production-grade RESTful APIs using C# and ASP.NET Core with layered architecture, reducing inter-service integration effort by 30%. Optimized SQL queries and database access patterns, improving average data-retrieval response time by 25% across backend services. Produced end-to-end Swagger API documentation covering 10+ endpoints, streamlining onboarding for front-end teams and reducing integration defects. Diagnosed and resolved backend performance bottlenecks through systematic debugging, improving application stability and reducing reported incidents by 20%.
+          Engineered 5+ production-grade RESTful APIs using C# and ASP.NET Core with layered architecture, reducing
+          inter-service integration effort by 30%. Optimized SQL queries and database access patterns, improving average
+          data-retrieval response time by 25% across backend services. Produced end-to-end Swagger API documentation
+          covering 10+ endpoints, streamlining onboarding for front-end teams and reducing integration defects.
+          Diagnosed and resolved backend performance bottlenecks through systematic debugging, improving application
+          stability and reducing reported incidents by 20%.
         </div>
         <div class="timeline-tags">
           <span class="tech-tag"><i class="fas fa-code"></i> C#</span>
@@ -1448,7 +1563,11 @@
         <h3 class="timeline-title">AWS Cloud Intern</h3>
         <div class="timeline-company">AbaxysTechnologies Pvt Ltd, Coimbatore, India</div>
         <div class="timeline-desc">
-          Configured and evaluated AWS core services — EC2, S3, Lambda — gaining hands-on proficiency in compute provisioning, object storage, and serverless execution. Researched and documented AWS cloud deployment architecture patterns across EC2, S3, and Lambda, producing a structured reference guide adopted by the engineering team. Collaborated with senior engineers on understanding cloud infrastructure design patterns, accelerating onboarding time for subsequent interns.
+          Configured and evaluated AWS core services — EC2, S3, Lambda — gaining hands-on proficiency in compute
+          provisioning, object storage, and serverless execution. Researched and documented AWS cloud deployment
+          architecture patterns across EC2, S3, and Lambda, producing a structured reference guide adopted by the
+          engineering team. Collaborated with senior engineers on understanding cloud infrastructure design patterns,
+          accelerating onboarding time for subsequent interns.
         </div>
         <div class="timeline-tags">
           <span class="tech-tag">AWS</span>
@@ -1466,13 +1585,14 @@
     <div class="projects-grid">
       <div class="project-card">
         <h3 class="project-name">Nexus Payment Router</h3>
-        <p class="project-desc">High-throughput payment routing engine processing millions of transactions per second with sub-millisecond latency and 99.999% availability.</p>
+        <p class="project-desc">High-throughput payment routing engine processing millions of transactions per second
+          with sub-millisecond latency and 99.999% availability.</p>
         <div class="code-snippet">type Transaction struct {
-  ID        string
-  Amount    decimal.Decimal
-  Currency  string
-  Timestamp time.Time
-}</div>
+          ID string
+          Amount decimal.Decimal
+          Currency string
+          Timestamp time.Time
+          }</div>
         <div class="project-footer">
           <div class="project-tags">
             <span class="project-tag">Go</span>
@@ -1487,10 +1607,11 @@
       </div>
       <div class="project-card">
         <h3 class="project-name">Chronos Event-Source</h3>
-        <p class="project-desc">Open-source event-sourcing framework with 4,000+ GitHub stars. Enables building event-driven architectures with CQRS pattern support.</p>
+        <p class="project-desc">Open-source event-sourcing framework with 4,000+ GitHub stars. Enables building
+          event-driven architectures with CQRS pattern support.</p>
         <div class="code-snippet">event Bus.Subscribe("payment")
-  .FilterByType("completed")
-  .Project(AccountProjection)</div>
+          .FilterByType("completed")
+          .Project(AccountProjection)</div>
         <div class="project-footer">
           <div class="project-tags">
             <span class="project-tag">Event Sourcing</span>
@@ -1505,12 +1626,13 @@
       </div>
       <div class="project-card">
         <h3 class="project-name">Lighthouse Dev Platform</h3>
-        <p class="project-desc">Internal developer platform built on Kubernetes. Streamlines deployment, monitoring, and management of microservices across teams.</p>
+        <p class="project-desc">Internal developer platform built on Kubernetes. Streamlines deployment, monitoring, and
+          management of microservices across teams.</p>
         <div class="code-snippet">resource Platform {
-  services: [Service]
-  replicas: 3
-  region: "us-east-1"
-}</div>
+          services: [Service]
+          replicas: 3
+          region: "us-east-1"
+          }</div>
         <div class="project-footer">
           <div class="project-tags">
             <span class="project-tag">Kubernetes</span>
@@ -1525,12 +1647,13 @@
       </div>
       <div class="project-card">
         <h3 class="project-name">TrueSync Replication</h3>
-        <p class="project-desc">Patented cross-region replication system using CRDTs for conflict-free, real-time synchronization across multiple data centers.</p>
+        <p class="project-desc">Patented cross-region replication system using CRDTs for conflict-free, real-time
+          synchronization across multiple data centers.</p>
         <div class="code-snippet">sync TrueSync {
-  strategy: CRDT
-  consistency: Strong
-  latency: &lt;10ms
-}</div>
+          strategy: CRDT
+          consistency: Strong
+          latency: &lt;10ms
+          }</div>
         <div class="project-footer">
           <div class="project-tags">
             <span class="project-tag">CRDT</span>
@@ -1545,11 +1668,12 @@
       </div>
       <div class="project-card">
         <h3 class="project-name">Aurora Analytics Engine</h3>
-        <p class="project-desc">Real-time analytics platform processing petabytes of data with ClickHouse and Kafka Streams for instant insights and reporting.</p>
+        <p class="project-desc">Real-time analytics platform processing petabytes of data with ClickHouse and Kafka
+          Streams for instant insights and reporting.</p>
         <div class="code-snippet">SELECT user_id, COUNT(*) as events
-FROM clickstream
-WHERE time &gt; now() - INTERVAL 1 DAY
-GROUP BY user_id</div>
+          FROM clickstream
+          WHERE time &gt; now() - INTERVAL 1 DAY
+          GROUP BY user_id</div>
         <div class="project-footer">
           <div class="project-tags">
             <span class="project-tag">ClickHouse</span>
@@ -1564,11 +1688,12 @@ GROUP BY user_id</div>
       </div>
       <div class="project-card">
         <h3 class="project-name">Vanguard Cache Layer</h3>
-        <p class="project-desc">Distributed caching system built on Redis with intelligent eviction policies and multi-region replication for sub-millisecond read latency.</p>
+        <p class="project-desc">Distributed caching system built on Redis with intelligent eviction policies and
+          multi-region replication for sub-millisecond read latency.</p>
         <div class="code-snippet">cache.Get(key)
-  .IfMiss()
-    .FetchFromDB()
-    .PopulateTTL(ttl)</div>
+          .IfMiss()
+          .FetchFromDB()
+          .PopulateTTL(ttl)</div>
         <div class="project-footer">
           <div class="project-tags">
             <span class="project-tag">Redis</span>
@@ -1624,7 +1749,8 @@ GROUP BY user_id</div>
         </div>
         <div class="meta-item">
           <div class="meta-icon">IN</div>
-          <a href="https://www.linkedin.com/in/p-gopika-02a065289/" target="_blank">linkedin.com/in/p-gopika-02a065289</a>
+          <a href="https://www.linkedin.com/in/p-gopika-02a065289/"
+            target="_blank">linkedin.com/in/p-gopika-02a065289</a>
         </div>
         <div class="meta-item">
           <div class="meta-icon">📍</div>
@@ -1937,7 +2063,7 @@ GROUP BY user_id</div>
     // Smooth Scroll for Anchor Links
     // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -1967,4 +2093,5 @@ GROUP BY user_id</div>
     });
   </script>
 </body>
+
 </html>
