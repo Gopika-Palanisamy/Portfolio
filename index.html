@@ -240,15 +240,15 @@
     }
 
     .theme-toggle svg {
-      fill: var(--accent-gold);
-      stroke: var(--accent-gold);
+      color: var(--accent-gold);
+      fill: currentColor;
+      stroke: currentColor;
       stroke-width: 2;
       transition: all 0.3s ease;
     }
 
     .theme-toggle:hover svg {
-      fill: var(--fg);
-      stroke: var(--fg);
+      color: var(--fg);
     }
 
     /* Sections */
@@ -1317,14 +1317,22 @@
     </button>
     <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3C7 3 2 8 2 13C2 18 7 23 12 23C17 23 22 18 22 13C22 8 17 3 12 3Z" fill="currentColor"
-          opacity="0.3" />
-        <path
-          d="M12 5C10.9 5 9.9 5.3 9 5.8L5.3 9.5C4.8 10 4.5 10.8 4.5 11.5C4.5 12.2 4.8 13 5.3 13.5L9 17.2C9.9 17.7 10.9 18 12 18C13.1 18 14.1 17.7 15 17.2L18.7 13.5C19.2 13 19.5 12.2 19.5 11.5C19.5 10.8 19.2 10 18.7 9.5L15 5.8C14.1 5.3 13.1 5 12 5Z"
-          fill="currentColor" />
-        <path
-          d="M12 15C13.1 15 14.1 14.7 15 14.2L18.7 10.5C19.2 10 19.5 9.2 19.5 8.5C19.5 7.8 19.2 7 18.7 6.5L15 2.8C14.1 2.3 13.1 2 12 2C10.9 2 9.9 2.3 9 2.8L5.3 6.5C4.8 7 4.5 7.8 4.5 8.5C4.5 9.2 4.8 10 5.3 10.5L9 14.2C9.9 14.7 10.9 15 12 15Z"
-          fill="currentColor" />
+        <!-- Sun icon (visible in dark mode) -->
+        <g class="sun-icon">
+          <circle cx="12" cy="12" r="5" fill="currentColor" />
+          <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <!-- Moon icon (visible in light mode) -->
+        <g class="moon-icon" style="display: none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" />
+        </g>
       </svg>
     </button>
   </nav>
@@ -1821,26 +1829,34 @@
     // Theme Toggle Functionality
     // ============================================
     const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = themeToggle.querySelector('.sun-icon');
+    const moonIcon = themeToggle.querySelector('.moon-icon');
 
     // Check persisted theme preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      if (savedTheme === 'light') {
-        themeToggle.querySelector('svg').style.fill = '#000';
-      }
+    if (savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = '';
+    } else {
+      sunIcon.style.display = '';
+      moonIcon.style.display = 'none';
     }
 
     // Toggle theme on click
     themeToggle.addEventListener('click', () => {
-      const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? '' : 'light';
-      if (newTheme === 'light') {
-        themeToggle.querySelector('svg').style.fill = '#000';
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        document.documentElement.setAttribute('data-theme', '');
+        localStorage.setItem('theme', '');
+        sunIcon.style.display = '';
+        moonIcon.style.display = 'none';
       } else {
-        themeToggle.querySelector('svg').style.fill = 'var(--accent-gold)';
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = '';
       }
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
     });
 
     // ============================================
