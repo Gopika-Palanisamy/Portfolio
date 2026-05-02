@@ -251,6 +251,32 @@
       color: var(--fg);
     }
 
+    .btn-resume-nav {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--accent-gold);
+      color: var(--bg);
+      border: 1px solid var(--accent-gold);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-resume-nav:hover {
+      background: transparent;
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
     /* Sections */
     section {
       min-height: 100vh;
@@ -1315,19 +1341,23 @@
       <span></span>
       <span></span>
     </button>
+    <button class="btn-resume-nav" onclick="openResume()">📄 Resume</button>
     <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Sun icon (visible in dark mode) -->
         <g class="sun-icon">
           <circle cx="12" cy="12" r="5" fill="currentColor" />
-          <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
+          <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
         </g>
         <!-- Moon icon (visible in light mode) -->
         <g class="moon-icon" style="display: none;">
@@ -1366,6 +1396,7 @@
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">GET IN TOUCH</a>
           <a href="#experience" class="btn btn-secondary">VIEW EXPERIENCE</a>
+          <button class="btn btn-secondary" onclick="openResume()">📄 RESUME</button>
         </div>
       </div>
       <div class="hero-right">
@@ -1437,24 +1468,65 @@
           and critical-thinking skills demonstrated through leadership roles in national-level competitions and student
           organizations.</p>
         <div class="tech-stack">
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" onerror="this.style.display='none'"> C#</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" onerror="this.style.display='none'"> Java</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" onerror="this.style.display='none'"> C</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET Core" onerror="this.style.display='none'"> ASP.NET Core</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" alt=".NET" onerror="this.style.display='none'"> .NET</span>
-          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#2dd4bf" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">&lt;/&gt;</text></svg> RESTful API Design</span>
-          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#6366f1" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">≡</text></svg> Layered Architecture</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" onerror="this.style.display='none'"> SQL</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" onerror="this.style.display='none'"> AWS</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio"> Visual Studio</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"> VS Code</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="Swagger"> Swagger</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"> Git</span>
-          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#f97316" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">✦</text></svg> Claude AI</span>
-          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#38bdf8" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">⬡</text></svg> Team Collaboration</span>
-          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#fbbf24" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">💡</text></svg> Problem Solving</span>
-          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#a78bfa" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">◈</text></svg> Critical Thinking</span>
-          <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#4ade80" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">↻</text></svg> Adaptability</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#"
+              onerror="this.style.display='none'"> C#</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"
+              onerror="this.style.display='none'"> Java</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+              alt="C" onerror="this.style.display='none'"> C</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+              alt="ASP.NET Core" onerror="this.style.display='none'"> ASP.NET Core</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" alt=".NET"
+              onerror="this.style.display='none'"> .NET</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18">
+              <rect width="18" height="18" fill="#2dd4bf" rx="3" /><text x="9" y="13" fill="#fff" font-size="10"
+                font-family="monospace" text-anchor="middle">&lt;/&gt;</text>
+            </svg> RESTful API Design</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18">
+              <rect width="18" height="18" fill="#6366f1" rx="3" /><text x="9" y="13" fill="#fff" font-size="10"
+                font-family="monospace" text-anchor="middle">≡</text>
+            </svg> Layered Architecture</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg"
+              alt="SQL" onerror="this.style.display='none'"> SQL</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+              alt="AWS" onerror="this.style.display='none'"> AWS</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
+              alt="Visual Studio"> Visual Studio</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"> VS
+            Code</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="Swagger">
+            Swagger</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+              alt="Git"> Git</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18">
+              <rect width="18" height="18" fill="#f97316" rx="3" /><text x="9" y="13" fill="#fff" font-size="10"
+                font-family="monospace" text-anchor="middle">✦</text>
+            </svg> Claude AI</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18">
+              <rect width="18" height="18" fill="#38bdf8" rx="3" /><text x="9" y="13" fill="#fff" font-size="10"
+                font-family="monospace" text-anchor="middle">⬡</text>
+            </svg> Team Collaboration</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18">
+              <rect width="18" height="18" fill="#fbbf24" rx="3" /><text x="9" y="13" fill="#fff" font-size="10"
+                font-family="monospace" text-anchor="middle">💡</text>
+            </svg> Problem Solving</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18">
+              <rect width="18" height="18" fill="#a78bfa" rx="3" /><text x="9" y="13" fill="#fff" font-size="10"
+                font-family="monospace" text-anchor="middle">◈</text>
+            </svg> Critical Thinking</span>
+          <span class="tech-tag"><svg viewBox="0 0 18 18">
+              <rect width="18" height="18" fill="#4ade80" rx="3" /><text x="9" y="13" fill="#fff" font-size="10"
+                font-family="monospace" text-anchor="middle">↻</text>
+            </svg> Adaptability</span>
         </div>
         <div class="stats-grid">
           <div class="stat-box">
@@ -1485,55 +1557,117 @@
       <div class="skill-card">
         <h3><i class="fas fa-code"></i> LANGUAGES</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" onerror="this.style.display='none'"> C#</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" onerror="this.style.display='none'"> Java</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" onerror="this.style.display='none'"> C</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#"
+              onerror="this.style.display='none'"> C#</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"
+              onerror="this.style.display='none'"> Java</span>
+          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+              alt="C" onerror="this.style.display='none'"> C</span>
         </div>
       </div>
       <div class="skill-card">
         <h3><i class="fas fa-layer-group"></i> FRAMEWORKS &amp; ARCHITECTURE</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET Core" onerror="this.style.display='none'"> ASP.NET Core</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" alt=".NET" onerror="this.style.display='none'"> .NET</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#2dd4bf"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="7" font-family="monospace">&lt;/&gt;</text></svg> RESTful API Design</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#6366f1"/><rect x="3" y="5" width="12" height="2" rx="1" fill="white"/><rect x="3" y="8" width="12" height="2" rx="1" fill="white"/><rect x="3" y="11" width="12" height="2" rx="1" fill="white"/></svg> Layered Architecture</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+              alt="ASP.NET Core" onerror="this.style.display='none'"> ASP.NET Core</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" alt=".NET"
+              onerror="this.style.display='none'"> .NET</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#2dd4bf" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="7" font-family="monospace">&lt;/&gt;</text>
+            </svg> RESTful API Design</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#6366f1" />
+              <rect x="3" y="5" width="12" height="2" rx="1" fill="white" />
+              <rect x="3" y="8" width="12" height="2" rx="1" fill="white" />
+              <rect x="3" y="11" width="12" height="2" rx="1" fill="white" />
+            </svg> Layered Architecture</span>
         </div>
       </div>
       <div class="skill-card">
         <h3><i class="fas fa-database"></i> DATABASES</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" onerror="this.style.display='none'"> SQL</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#f87171"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="8" font-family="monospace">fn</text></svg> Stored Procedures</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#fb923c"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="8" font-family="monospace">DB</text></svg> Data Retrieval</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg"
+              alt="SQL" onerror="this.style.display='none'"> SQL</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#f87171" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="8" font-family="monospace">fn</text>
+            </svg> Stored Procedures</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#fb923c" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="8" font-family="monospace">DB</text>
+            </svg> Data Retrieval</span>
         </div>
       </div>
       <div class="skill-card">
         <h3><i class="fas fa-cloud"></i> CLOUD</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" onerror="this.style.display='none'"> AWS</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#f97316"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="7" font-family="monospace">EC2</text></svg> EC2</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#22c55e"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="8" font-family="monospace">S3</text></svg> S3</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#a78bfa"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="8" font-family="monospace">λ</text></svg> Lambda</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+              alt="AWS" onerror="this.style.display='none'"> AWS</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#f97316" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="7" font-family="monospace">EC2</text>
+            </svg> EC2</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#22c55e" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="8" font-family="monospace">S3</text>
+            </svg> S3</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#a78bfa" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="8" font-family="monospace">λ</text>
+            </svg> Lambda</span>
         </div>
       </div>
       <div class="skill-card">
         <h3>TOOLS</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" alt="Visual Studio" onerror="this.style.display='none'"> Visual Studio</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" onerror="this.style.display='none'"> VS Code</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" alt="Swagger" onerror="this.style.display='none'"> Swagger</span>
-          <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" onerror="this.style.display='none'"> Git</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#f97316"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">AI</text></svg> Claude AI</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg"
+              alt="Visual Studio" onerror="this.style.display='none'"> Visual Studio</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code"
+              onerror="this.style.display='none'"> VS Code</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" alt="Swagger"
+              onerror="this.style.display='none'"> Swagger</span>
+          <span class="tech-tag"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"
+              onerror="this.style.display='none'"> Git</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#f97316" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="7" font-family="sans-serif">AI</text>
+            </svg> Claude AI</span>
         </div>
       </div>
       <div class="skill-card">
         <h3>SOFT SKILLS</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#38bdf8"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="10">⬡</text></svg> Team Collaboration</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#fbbf24"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="10">◎</text></svg> Problem Solving</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#a78bfa"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="10">◈</text></svg> Critical Thinking</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#4ade80"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="10">↻</text></svg> Adaptability</span>
-          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#f472b6"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="10">◷</text></svg> Time Management</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#38bdf8" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="10">⬡</text>
+            </svg> Team Collaboration</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#fbbf24" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="10">◎</text>
+            </svg> Problem Solving</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#a78bfa" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="10">◈</text>
+            </svg> Critical Thinking</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#4ade80" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="10">↻</text>
+            </svg> Adaptability</span>
+          <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="18" height="18" rx="4" fill="#f472b6" /><text x="9" y="13" text-anchor="middle" fill="white"
+                font-size="10">◷</text>
+            </svg> Time Management</span>
         </div>
       </div>
     </div>
@@ -1831,6 +1965,31 @@
     const themeToggle = document.getElementById('themeToggle');
     const sunIcon = themeToggle.querySelector('.sun-icon');
     const moonIcon = themeToggle.querySelector('.moon-icon');
+
+    // ============================================
+    // Resume Popup
+    // ============================================
+    function openResume() {
+      const resumePath = './Gopika_Resume.pdf';
+
+      const popupW = 960;
+      const popupH = 720;
+      const left = Math.round((screen.width - popupW) / 2);
+      const top = Math.round((screen.height - popupH) / 2);
+
+      const popup = window.open(
+        resumePath,
+        '_blank',
+        `width=${popupW},height=${popupH},left=${left},top=${top},scrollbars=yes,resizable=yes,toolbar=no,menubar=no,location=no,status=no`
+      );
+
+      if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+        const a = document.createElement('a');
+        a.href = resumePath;
+        a.download = 'Gopika_Resume.pdf';
+        a.click();
+      }
+    }
 
     // Check persisted theme preference
     const savedTheme = localStorage.getItem('theme');
