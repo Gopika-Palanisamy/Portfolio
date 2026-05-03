@@ -1,4 +1,4 @@
-﻿:root {
+:root {
       --bg: #05050a;
       --bg-elevated: #0a0a12;
       --fg: #e8e6e3;
@@ -612,6 +612,43 @@
       max-width: 500px;
       animation: float 6s ease-in-out infinite;
       box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      max-width: 500px;
+    }
+
+    .hero-social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .hero-social-link:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      background: rgba(201, 168, 76, 0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.15);
+    }
+
+    .hero-social-link i {
+      font-size: 15px;
     }
 
     .code-header {
