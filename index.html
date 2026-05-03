@@ -1145,11 +1145,21 @@
       margin-bottom: 16px;
     }
 
+    .terminal-line:has(textarea) {
+      align-items: flex-start;
+    }
+
     .terminal-prompt {
       font-family: 'JetBrains Mono', monospace;
       font-size: 14px;
       color: var(--success);
       margin-right: 10px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .terminal-line:has(textarea) .terminal-prompt {
+      padding-top: 10px;
     }
 
     .terminal-input {
@@ -1835,6 +1845,10 @@ ORDER BY CreatedAt DESC</div>
             target="_blank">linkedin.com/in/gopika-palanisamy</a>
         </div>
         <div class="meta-item">
+          <div class="meta-icon"><i class="fab fa-github"></i></div>
+          <a href="https://github.com/Gopika-Palanisamy/" target="_blank">github.com/Gopika-Palanisamy</a>
+        </div>
+        <div class="meta-item">
           <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
           <span>Coimbatore, Tamil Nadu</span>
         </div>
@@ -1845,7 +1859,7 @@ ORDER BY CreatedAt DESC</div>
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div>© 2024 Gopika P. Backend Developer.</div>
+      <div>© <span id="footerYear"></span> Gopika P. Backend Developer.</div>
       <div class="footer-links">
         <a href="#hero">Home</a>
         <a href="#about">About</a>
@@ -2331,6 +2345,9 @@ ORDER BY CreatedAt DESC</div>
       gsap.from(".hero-metrics", { y: 30, opacity: 0, duration: 1, ease: "power3.out", delay: 0.6 });
       gsap.from(".hero-buttons", { y: 30, opacity: 0, duration: 1, ease: "power3.out", delay: 0.8 });
     }
+
+    // Dynamic footer year
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
 
     window.addEventListener('load', () => {
       updateNavbar();
