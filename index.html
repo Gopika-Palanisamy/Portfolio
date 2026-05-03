@@ -1800,19 +1800,19 @@ ORDER BY CreatedAt DESC</div>
           <div class="terminal-header">$ connect gopiboomi55@gmail.com</div>
           <form id="contactForm">
             <div class="terminal-line">
-              <span class="terminal-prompt">$</span>
+              <span class="terminal-prompt"><i class="fas fa-user"></i></span>
               <input type="text" class="terminal-input" id="nameInput" placeholder="name" required>
             </div>
             <div class="terminal-line">
-              <span class="terminal-prompt">$</span>
+              <span class="terminal-prompt"><i class="fas fa-envelope"></i></span>
               <input type="email" class="terminal-input" id="emailInput" placeholder="email" required>
             </div>
             <div class="terminal-line">
-              <span class="terminal-prompt">$</span>
+              <span class="terminal-prompt"><i class="fas fa-tag"></i></span>
               <input type="text" class="terminal-input" id="subjectInput" placeholder="subject" required>
             </div>
             <div class="terminal-line">
-              <span class="terminal-prompt">$</span>
+              <span class="terminal-prompt"><i class="fas fa-comment-alt"></i></span>
               <textarea class="terminal-input" id="messageInput" placeholder="message" required></textarea>
             </div>
           </form>
@@ -2163,16 +2163,36 @@ ORDER BY CreatedAt DESC</div>
 
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      submitBtn.textContent = '✓ Message Sent';
-      submitBtn.classList.add('submitted');
-      successMessage.classList.add('show');
-      contactForm.reset();
+      
+      const formData = new FormData();
+      formData.append('entry.2113511146', document.getElementById('nameInput').value);
+      formData.append('entry.1613555204', document.getElementById('emailInput').value); // For custom email field
+      formData.append('entry.1197741941', document.getElementById('subjectInput').value);
+      formData.append('entry.113202919', document.getElementById('messageInput').value);
 
-      setTimeout(() => {
-        submitBtn.textContent = 'SEND MESSAGE';
-        submitBtn.classList.remove('submitted');
-        successMessage.classList.remove('show');
-      }, 3000);
+      submitBtn.textContent = 'SENDING...';
+      
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSclpdl0qTBrVLqky9dDdH691iMS3zQus0kzg13j3Iuysp0InA/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      }).then(() => {
+        submitBtn.textContent = '✓ Message Sent';
+        submitBtn.classList.add('submitted');
+        successMessage.classList.add('show');
+        contactForm.reset();
+
+        setTimeout(() => {
+          submitBtn.textContent = 'SEND MESSAGE';
+          submitBtn.classList.remove('submitted');
+          successMessage.classList.remove('show');
+        }, 3000);
+      }).catch(err => {
+        submitBtn.textContent = 'ERROR!';
+        setTimeout(() => {
+          submitBtn.textContent = 'SEND MESSAGE';
+        }, 3000);
+      });
     });
 
     // ============================================
