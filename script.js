@@ -1,4 +1,4 @@
-﻿// ============================================
+// ============================================
     // Typewriter Animation
     // ============================================
     const taglines = [
@@ -267,12 +267,22 @@
 
     mobileMenuBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('open');
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        mobileMenuBtn.classList.remove('open');
       });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.classList.remove('open');
+      }
     });
 
     // ============================================
