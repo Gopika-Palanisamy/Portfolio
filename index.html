@@ -1288,6 +1288,13 @@
       color: var(--accent-gold);
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      pointer-events: auto;
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
 
@@ -1337,12 +1344,16 @@
         display: block;
       }
 
+      .btn-resume-nav {
+        display: none;
+      }
+
       section {
         padding: 100px 24px 60px;
       }
 
       .hero-name {
-        font-size: 60px;
+        font-size: 48px;
       }
 
       .section-title {
@@ -1355,6 +1366,10 @@
 
       .hero-metrics {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
       }
 
       .stats-grid {
@@ -1375,10 +1390,6 @@
     @media (max-width: 480px) {
       .hero-metrics {
         grid-template-columns: 1fr;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
       }
 
       .skills-grid {
@@ -1419,32 +1430,34 @@
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="mobile-menu-btn" id="mobileMenuBtn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <button class="btn-resume-nav" onclick="openResume()">📄 Resume</button>
-    <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Sun icon (visible in dark mode) -->
-        <g class="sun-icon">
-          <circle cx="12" cy="12" r="5" fill="currentColor" />
-          <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </g>
-        <!-- Moon icon (visible in light mode) -->
-        <g class="moon-icon" style="display: none;">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" />
-        </g>
-      </svg>
-    </button>
+    <div class="nav-actions">
+      <button class="btn-resume-nav" onclick="openResume()">📄 Resume</button>
+      <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sun icon (visible in dark mode) -->
+          <g class="sun-icon">
+            <circle cx="12" cy="12" r="5" fill="currentColor" />
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <!-- Moon icon (visible in light mode) -->
+          <g class="moon-icon" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" />
+          </g>
+        </svg>
+      </button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Hero Section -->
