@@ -1,8 +1,8 @@
 :root {
       --bg: #05050a;
       --bg-elevated: #0a0a12;
-      --fg: #e8e6e3;
-      --muted: #5a5a6e;
+      --fg: #f0ede8;
+      --muted: #9d9db0;
       --accent-gold: #c9a84c;
       --accent-gold-dim: #8b7336;
       --accent-cyan: #38bdf8;
@@ -15,9 +15,9 @@
     :root[data-theme="light"] {
       --bg: #faf9f5;
       --bg-elevated: #ffffff;
-      --fg: #1a1a1a;
-      --muted: #52525b;
-      --muted-soft: #a1a1aa;
+      --fg: #111111;
+      --muted: #3f3f50;
+      --muted-soft: #6b6b7f;
       --accent-gold: #b48529;
       --accent-gold-dim: #926a1d;
       --accent-cyan: #0284c7;
@@ -44,10 +44,10 @@
 
     body {
       font-family: 'Syne', sans-serif;
-      font-size: 17px;
+      font-size: 16px;
       background: var(--bg);
       color: var(--fg);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
       min-height: 100vh;
     }
