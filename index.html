@@ -142,6 +142,7 @@
       z-index: 1000;
       transition: all 0.4s ease;
       pointer-events: none;
+      animation: slideInDown 0.8s ease forwards;
     }
 
     nav.scrolled {
@@ -576,6 +577,22 @@
       color: var(--bg);
     }
 
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.7s ease;
+    }
+
+    .btn:hover::before {
+      left: 200%;
+    }
+
     .btn::after {
       content: '';
       position: absolute;
@@ -606,6 +623,8 @@
       border-radius: 8px;
       overflow: hidden;
       max-width: 500px;
+      animation: float 6s ease-in-out infinite;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
     .code-header {
@@ -777,6 +796,8 @@
     .tech-tag:hover {
       border-color: var(--accent-gold);
       color: var(--accent-gold);
+      box-shadow: 0 0 15px rgba(201, 168, 76, 0.2);
+      transform: translateY(-3px);
     }
 
     .stats-grid {
@@ -922,6 +943,7 @@
       background: var(--bg);
       border: 2px solid var(--accent-gold);
       transition: all 0.3s ease;
+      animation: pulse-ring 2s infinite;
     }
 
     .timeline-item:hover .timeline-dot {
@@ -992,14 +1014,15 @@
       background: var(--card);
       border: 1px solid var(--border);
       padding: 24px;
-      transition: all 0.4s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
     }
 
     .project-card:hover {
       border-color: var(--accent-gold);
-      transform: translateY(-8px);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px -10px rgba(201, 168, 76, 0.3);
     }
 
     .project-card::before {
@@ -1397,7 +1420,53 @@
       }
     }
 
-    /* Reduced Motion */
+    /* Additional Animations */
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(201, 168, 76, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes slideInDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .stagger-container > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .stagger-container > *.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .animate-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.animate-fade.visible {
+  opacity: 1;
+  transform: none;
+}
+.animate-scale {
+  transform: scale(0.9);
+  transition: transform 0.6s ease;
+}
+.animate-scale.visible {
+  transform: scale(1);
+}
+
+/* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
 
       *,
@@ -1461,7 +1530,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero">
+  <section id="hero" class="animate-fade">
     <div class="hero-content">
       <div class="hero-left">
         <h1 class="hero-name"><span class="glitch">GOPIKA P</span></h1>
@@ -1532,7 +1601,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="animate-fade">
     <h2 class="section-title">ABOUT</h2>
     <div class="about-content">
       <div class="ascii-profile" id="asciiProfile">
@@ -1560,7 +1629,7 @@
           exposure to Amazon Web Services (AWS) — EC2, S3, and Lambda — with strong problem-solving, team collaboration,
           and critical-thinking skills demonstrated through leadership roles in national-level competitions and student
           organizations.</p>
-        <div class="tech-stack">
+        <div class="tech-stack stagger-container">
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" onerror="this.style.display='none'"> C#</span>
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" onerror="this.style.display='none'"> Java</span>
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" onerror="this.style.display='none'"> C</span>
@@ -1580,7 +1649,7 @@
           <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#a78bfa" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">◈</text></svg> Critical Thinking</span>
           <span class="tech-tag"><svg viewBox="0 0 18 18"><rect width="18" height="18" fill="#4ade80" rx="3"/><text x="9" y="13" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle">↻</text></svg> Adaptability</span>
         </div>
-        <div class="stats-grid">
+        <div class="stats-grid stagger-container">
           <div class="stat-box">
             <div class="metric-value">1.2B</div>
             <div class="metric-label">DAILY REQUESTS</div>
@@ -1603,12 +1672,12 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
+  <section id="skills" class="animate-fade">
     <h2 class="section-title">SKILLS</h2>
-    <div class="skills-grid">
+    <div class="skills-grid stagger-container">
       <div class="skill-card">
         <h3><i class="fas fa-code"></i> LANGUAGES</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;" class="stagger-container">
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" onerror="this.style.display='none'"> C#</span>
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" onerror="this.style.display='none'"> Java</span>
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" onerror="this.style.display='none'"> C</span>
@@ -1616,7 +1685,7 @@
       </div>
       <div class="skill-card">
         <h3><i class="fas fa-layer-group"></i> FRAMEWORKS &amp; ARCHITECTURE</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;" class="stagger-container">
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET Core" onerror="this.style.display='none'"> ASP.NET Core</span>
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" alt=".NET" onerror="this.style.display='none'"> .NET</span>
           <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#2dd4bf"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="7" font-family="monospace">&lt;/&gt;</text></svg> RESTful API Design</span>
@@ -1625,7 +1694,7 @@
       </div>
       <div class="skill-card">
         <h3><i class="fas fa-database"></i> DATABASES</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;" class="stagger-container">
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" onerror="this.style.display='none'"> SQL</span>
           <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#f87171"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="8" font-family="monospace">fn</text></svg> Stored Procedures</span>
           <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#fb923c"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="8" font-family="monospace">DB</text></svg> Data Retrieval</span>
@@ -1633,7 +1702,7 @@
       </div>
       <div class="skill-card">
         <h3><i class="fas fa-cloud"></i> CLOUD</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;" class="stagger-container">
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" onerror="this.style.display='none'"> AWS</span>
           <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#f97316"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="7" font-family="monospace">EC2</text></svg> EC2</span>
           <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#22c55e"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="8" font-family="monospace">S3</text></svg> S3</span>
@@ -1642,7 +1711,7 @@
       </div>
       <div class="skill-card">
         <h3>TOOLS</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;" class="stagger-container">
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" alt="Visual Studio" onerror="this.style.display='none'"> Visual Studio</span>
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" onerror="this.style.display='none'"> VS Code</span>
           <span class="tech-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" alt="Swagger" onerror="this.style.display='none'"> Swagger</span>
@@ -1652,7 +1721,7 @@
       </div>
       <div class="skill-card">
         <h3>SOFT SKILLS</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;" class="stagger-container">
           <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#38bdf8"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="10">⬡</text></svg> Team Collaboration</span>
           <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#fbbf24"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="10">◎</text></svg> Problem Solving</span>
           <span class="tech-tag"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect width="18" height="18" rx="4" fill="#a78bfa"/><text x="9" y="13" text-anchor="middle" fill="white" font-size="10">◈</text></svg> Critical Thinking</span>
@@ -1664,7 +1733,7 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience">
+  <section id="experience" class="animate-fade">
     <h2 class="section-title">EXPERIENCE</h2>
     <div class="timeline-container">
       <div class="timeline-line" id="timelineLine"></div>
@@ -1714,7 +1783,7 @@
   <!-- Projects Section -->
   <section id="projects">
     <h2 class="section-title">PROJECTS</h2>
-    <div class="projects-grid">
+    <div class="projects-grid stagger-container">
       <div class="project-card">
         <h3 class="project-name">Nexus Payment Router</h3>
         <p class="project-desc">High-throughput payment routing engine processing millions of transactions per second
@@ -1798,7 +1867,7 @@
           </div>
         </div>
       </div>
-      <div class="project-card">
+      <div class="project-card animate-fade">
         <h3 class="project-name">Aurora Analytics Engine</h3>
         <p class="project-desc">Real-time analytics platform processing petabytes of data with ClickHouse and Kafka
           Streams for instant insights and reporting.</p>
@@ -1818,7 +1887,7 @@
           </div>
         </div>
       </div>
-      <div class="project-card">
+      <div class="project-card animate-fade">
         <h3 class="project-name">Vanguard Cache Layer</h3>
         <p class="project-desc">Distributed caching system built on Redis with intelligent eviction policies and
           multi-region replication for sub-millisecond read latency.</p>
@@ -1844,7 +1913,7 @@
   <!-- Contact Section -->
   <section id="contact">
     <h2 class="section-title">CONTACT</h2>
-    <div class="contact-grid">
+    <div class="contact-grid stagger-container">
       <div class="contact-form">
         <div class="terminal-form">
           <div class="terminal-header">$ connect gopiboomi55@gmail.com</div>
@@ -2234,6 +2303,39 @@
 
     sections.forEach(section => {
       sectionObserver.observe(section);
+    });
+
+    // Observe animation elements (project cards, etc.)
+    const animElements = document.querySelectorAll('.animate-fade, .animate-scale');
+    const animObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    animElements.forEach(el => animObserver.observe(el));
+
+    // ============================================
+    // Stagger Animations
+    // ============================================
+    const staggerContainers = document.querySelectorAll('.stagger-container');
+    const staggerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const items = Array.from(entry.target.children);
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * 100);
+          });
+          staggerObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    staggerContainers.forEach(container => {
+      staggerObserver.observe(container);
     });
 
     // ============================================
